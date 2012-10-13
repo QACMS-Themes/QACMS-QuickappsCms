@@ -1,0 +1,27 @@
+info:
+    name: QuickApps CMS project
+    description: Official project web site
+    core: >1.0
+    version: 1.0
+    author: Christopher Castro <chris@quickapps.es>
+
+stylesheets:
+    all: [reset.css, styles.css]
+
+javascripts:
+    file: [superfish/superfish.js, https://apis.google.com/js/plusone.js]
+
+regions:
+    language-switcher: Language Switcher
+    search: Search form
+    main-menu: Main menu
+    user-menu: User menu
+
+    slider: Slider
+
+    services-left: Services Left
+    services-center: Services Center
+    services-right: Services Right
+
+    sidebar-left: Sidebar Left
+layout: default
