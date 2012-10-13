@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo Configure::read('Variable.language.code'); ?>" version="XHTML+RDFa 1.0" dir="<?php echo Configure::read('Variable.language.direction'); ?>">
     <head>
         <title><?php echo $this->Layout->title(); ?></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <?php echo $this->Layout->meta(); ?>
         <?php echo $this->Layout->stylesheets(); ?>
         <?php echo $this->Layout->javascripts(); ?>
@@ -18,21 +17,21 @@
                     </a>
                 <?php endif; ?>            
 
-                <?php if (!$this->Layout->emptyRegion('user-menu')): ?>
+                <?php if ($this->Block->regionCount('user-menu')): ?>
                 <div id="user-menu">
-                    <?php echo $this->Layout->blocks('user-menu'); ?>
+                    <?php echo $this->Block->region('user-menu'); ?>
                 </div>
                 <?php endif; ?>
 
-                <?php if (!$this->Layout->emptyRegion('language-switcher')): ?>
+                <?php if ($this->Block->regionCount('language-switcher')): ?>
                 <div id="language-switcher">
-                    <?php echo $this->Layout->blocks('language-switcher'); ?>
+                    <?php echo $this->Block->region('language-switcher'); ?>
                 </div>
                 <?php endif; ?>
 
-                <?php if (!$this->Layout->emptyRegion('search')): ?>
+                <?php if ($this->Block->regionCount('search')): ?>
                 <div id="search-block">
-                    <?php echo $this->Layout->blocks('search'); ?>
+                    <?php echo $this->Block->region('search'); ?>
                 </div>
                 <?php endif; ?>
 
@@ -41,14 +40,14 @@
 
         <div id="header-bottom">
             <div class="container">
-                <?php echo $this->Layout->blocks('main-menu'); ?>
+                <?php echo $this->Block->region('main-menu'); ?>
             </div>
         </div>
 
         <div id="page">
-            <?php if (!$this->Layout->emptyRegion('slider')): ?>
+            <?php if ($this->Block->regionCount('slider')): ?>
             <div class="top-slider">
-                <?php echo $this->Layout->blocks('slider'); ?>
+                <?php echo $this->Block->region('slider'); ?>
             </div>
             <?php endif; ?>
 
@@ -66,17 +65,17 @@
 
                     <div id="services">
                         <div class="service first">
-                            <?php echo $this->Layout->blocks('services-left'); ?>
+                            <?php echo $this->Block->region('services-left'); ?>
 
                         </div> <!-- end .service -->
 
                         <div class="service middle">
-                            <?php echo $this->Layout->blocks('services-center'); ?>
+                            <?php echo $this->Block->region('services-center'); ?>
 
                         </div> <!-- end .service -->
 
                         <div class="service last">
-                            <?php echo $this->Layout->blocks('services-right'); ?>
+                            <?php echo $this->Block->region('services-right'); ?>
                         </div> <!-- end .service -->
                     </div>
 
@@ -85,7 +84,7 @@
             <?php else: ?>
                 <div class="container">
                     <div id="help-blocks">
-                        <?php echo $this->Layout->blocks('help'); ?>
+                        <?php echo $this->Block->region('help'); ?>
                     </div>
 
                     <?php if ($sessionFlash = $this->Layout->sessionFlash()): ?>
@@ -95,7 +94,7 @@
                     <?php endif; ?>
 
                     <div id="sidebar-left">
-                        <?php echo $this->Layout->blocks('sidebar-left'); ?>&nbsp;
+                        <?php echo $this->Block->region('sidebar-left'); ?>&nbsp;
                     </div>
 
                     <div id="content" class="clearfix">

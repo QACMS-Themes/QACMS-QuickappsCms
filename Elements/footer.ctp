@@ -14,7 +14,6 @@
     </script>
 
     <?php if (Configure::read('Theme.settings.analytic_key')): ?>
-
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', '<?php echo Configure::read('Theme.settings.analytic_key'); ?>']);
