@@ -43,7 +43,7 @@ class InstallComponent extends Component {
             )
 		, 'QuickappsCms.slider');
 
-        return true;        
+        return true;
     }
 
     public function beforeUninstall(){
